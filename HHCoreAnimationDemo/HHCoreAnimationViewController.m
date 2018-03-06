@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
     _data = @[
               // 0
-              @[HierarchyModelMake(@"CALayer的能力", YES, @1), HierarchyModelMake(@"寄宿图", YES, @2), HierarchyModelMake(@"图形几何学", YES, @4), HierarchyModelMake(@"变换", YES, @6), HierarchyModelMake(@"专用图层", YES, @7), HierarchyModelMake(@"隐式动画", YES, @8), HierarchyModelMake(@"显示动画", YES, @9), HierarchyModelMake(@"图层时间", YES, @10), HierarchyModelMake(@"缓冲", YES, @12), HierarchyModelMake(@"基于定时器的动画", YES, @15)],
+              @[HierarchyModelMake(@"CALayer的能力", YES, @1), HierarchyModelMake(@"寄宿图", YES, @2), HierarchyModelMake(@"图形几何学", YES, @4), HierarchyModelMake(@"变换", YES, @6), HierarchyModelMake(@"专用图层", YES, @7), HierarchyModelMake(@"隐式动画", YES, @8), HierarchyModelMake(@"显式动画", YES, @9), HierarchyModelMake(@"图层时间", YES, @10), HierarchyModelMake(@"缓冲", YES, @12), HierarchyModelMake(@"基于定时器的动画", YES, @15)],
               // 1
               @[HierarchyModelNoChildModelMake(@"阴影"), HierarchyModelNoChildModelMake(@"圆角"), HierarchyModelNoChildModelMake(@"边框"), HierarchyModelNoChildModelMake(@"3D变换"), HierarchyModelNoChildModelMake(@"非矩形范围"), HierarchyModelNoChildModelMake(@"透明遮罩"), HierarchyModelNoChildModelMake(@"多级非线性动画"), HierarchyModelNoChildModelMake(@"拉伸过滤"), HierarchyModelNoChildModelMake(@"组透明")],
               // 2
