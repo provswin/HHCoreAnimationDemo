@@ -795,7 +795,7 @@
         innerLayer.transform = inner;
     } else if ([_name isEqualToString:@"固体对象、光亮和阴影、点击事件"]) {
         //set up the container sublayer transform
-        _matrixContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        _matrixContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         _matrixContainerView.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:_matrixContainerView];
         
@@ -829,7 +829,7 @@
         [self addFace:5 withTransform:transform];
     } else if ([_name isEqualToString:@"CATextLayer"]) {
         CATextLayer *textLayer = [CATextLayer layer];
-        textLayer.frame = CGRectMake(0, NAVIGATIONBARHEIGHT, self.view.bounds.size.width, self.view.bounds.size.height -  NAVIGATIONBARHEIGHT);
+        textLayer.frame = CGRectMake(0, NAVIGATIONBARHEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height -  NAVIGATIONBARHEIGHT);
         textLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
         
         textLayer.contentsScale = [UIScreen mainScreen].scale;
@@ -876,7 +876,7 @@
         [self.view.layer addSublayer:textLayer];
     } else if ([_name isEqualToString:@"CATransformLayer"]) {
         //set up the container sublayer transform
-        _matrixContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        _matrixContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         _matrixContainerView.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:_matrixContainerView];
         
@@ -924,7 +924,7 @@
     } else if ([_name isEqualToString:@"CAReplicatorLayer、反射"]) {
         //create a replicator layer and add it to our view
         CAReplicatorLayer *replicator = [CAReplicatorLayer layer];
-        replicator.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height / 2);
+        replicator.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height / 2);
         replicator.backgroundColor = [UIColor lightGrayColor].CGColor;
         [self.view.layer addSublayer:replicator];
         
@@ -963,7 +963,7 @@
         [replicator addSublayer:layer];
         
         {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height / 2, self.view.bounds.size.width, self.view.bounds.size.height / 2)];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height / 2, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height / 2)];
             view.backgroundColor = [UIColor darkGrayColor];
             [self.view addSubview:view];
             
@@ -1008,7 +1008,7 @@
         UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureChanged:)];
         [self.view addGestureRecognizer:recognizer];
     } else if ([_name isEqualToString:@"CATiledLayer"]) {
-        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         [self.view addSubview:scrollView];
         
         _tiledLayer = [CATiledLayer layer];
@@ -1022,7 +1022,7 @@
         [_tiledLayer setNeedsDisplay];
     } else if ([_name isEqualToString:@"CAEmitterLayer"]) {
         CAEmitterLayer *emitterLayer = [CAEmitterLayer layer];
-        emitterLayer.frame = self.view.bounds;
+        emitterLayer.frame = [UIScreen mainScreen].bounds;
         emitterLayer.backgroundColor = [UIColor blackColor].CGColor;
         [self.view.layer addSublayer:emitterLayer];
         
@@ -1082,7 +1082,7 @@
         AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
         AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
         AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
-        playerLayer.frame = CGRectMake(0, NAVIGATIONBARHEIGHT, self.view.bounds.size.width, self.view.bounds.size.height - NAVIGATIONBARHEIGHT);
+        playerLayer.frame = CGRectMake(0, NAVIGATIONBARHEIGHT, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - NAVIGATIONBARHEIGHT);
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         playerLayer.transform = transform;
         [self.view.layer addSublayer:playerLayer];
@@ -1324,7 +1324,7 @@
         _shipLayer.position = CGPointMake(center.x + 48.f, center.y);
         [self.view.layer addSublayer:_shipLayer];
         
-        _relativeTimeControlContainerView.frame = CGRectMake(0, 0, self.view.bounds.size.width - 48, 80);
+        _relativeTimeControlContainerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 48, 80);
         _relativeTimeControlContainerView.center = CGPointMake(center.x, center.y + 48.f + 96.f);
         [self.view addSubview:_relativeTimeControlContainerView];
         
@@ -1422,7 +1422,7 @@
         [_timingFunctionLayer addAnimation:group forKey:@"timingFunction"];
         
         _timimgFunctionLabel = [[UILabel alloc] init];
-        _timimgFunctionLabel.frame = CGRectMake(0, 0, self.view.bounds.size.width / 2, 30);
+        _timimgFunctionLabel.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width / 2, 30);
         _timimgFunctionLabel.center = CGPointMake(center.x, center.y + 48 + 15 + 16);
         _timimgFunctionLabel.text = kCAMediaTimingFunctionEaseInEaseOut;
         _timimgFunctionLabel.textAlignment = NSTextAlignmentCenter;
@@ -1447,7 +1447,7 @@
         }
     } else if ([_name isEqualToString:@"UIView的动画缓冲"]) {
         _animationOptionLabel = [[UILabel alloc] init];
-        _animationOptionLabel.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
+        _animationOptionLabel.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30);
         _animationOptionLabel.center = center;
         _animationOptionLabel.textAlignment = NSTextAlignmentCenter;
         _animationOptionLabel.text = @"UIView的动画缓冲";
